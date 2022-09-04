@@ -1,6 +1,6 @@
 #!/usr/bin/env ruby
 if ARGV.length > 0
-    for m in ARGV[0].scan(/hbt{2,5}n/)
+    for m in ARGV[0].scan(/hb?tn/)
 	puts m
     end
 end
