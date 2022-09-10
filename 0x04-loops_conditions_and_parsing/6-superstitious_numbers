@@ -10,7 +10,7 @@ do
     10)
       printf "bad luck from Japan\n"
       ;;
-    17)
+    18)
       printf "bad luck from Italy\n"
       ;;
   esac
