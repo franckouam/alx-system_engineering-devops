@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+# Displays the current directory files basenames
+
+for file in "$PWD"/*
+do
+  basename "$file" | sed -n 's/\A.*-//p'
+done

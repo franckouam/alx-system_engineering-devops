@@ -1,0 +1,14 @@
+#!/usr/bin/env bash
+# This script prints Best School 10 times
+w="Best School"
+i=0
+while [ $i -le 9 ] 
+do
+  if [ $i -eq 8 ]
+  then
+    printf "%s\nHi\n" "$w"
+  else
+    echo "$w"
+  fi
+  i=$(( i + 1 ))
+done
