@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+# Tranfers a file to a server using SSH
+if [ $# -lt 3 ]
+then
+    echo "Usage: 0-transfer_file PATH_TO_FILE IP USERNAME PATH_TO_SSH_KEY"
+else
+    if [ -n "$4" ]
+	then
+	    op="-i $4"
+	fi
+    scp  -o StrictHostKeyChecking=no "$op" "$1" "$3@$2:~/"
+fi
