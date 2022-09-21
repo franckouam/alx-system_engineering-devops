@@ -1,14 +1,30 @@
 #!/usr/bin/env bash
 # Install nginx and start it
-apt-get -y install nginx
+sudo apt-get update
+sudo apt-get install nginx -y
+echo "Hello World!" | sudo tee /usr/share/nginx/html/index.html
 
-ufw allow 'Nginx HTTP'
+new_config=\
+"server {
+        listen 80 default_server;
+        listen [::]:80 default_server;
+               root /var/www/html;
+        index index.html index.htm index.nginx-debian.html;
+        server_name _;
+        location / {
+                try_files \$uri \$uri/ =404;
+        }
 
-echo "Holberton School" > /var/www/html/index.html
+        if (\$request_filename ~ redirect_me){
+            rewrite ^ https://www.youtube.com/watch?v=QH2-TGUlwu4 permanent;
+        }
+}
+"
 
-sudo chown -R $USER:$USER /var/www/html
-sudo chmod -R 755 /var/www
-
-sed -i '37i\rewrite ^/redirect_me https://www.youtube.com/watch?v=QH2-TGUlwu4 permanent;' /etc/nginx/sites-available/default
-
-service nginx start
+echo "$new_config" > /etc/nginx/sites-available/default
+if [ "$(pgrep nginx)" -le 0 ];
+then
+    service nginx start
+else
+    service nginx restart
+fi;
