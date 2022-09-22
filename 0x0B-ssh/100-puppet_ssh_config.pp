@@ -1,12 +1,5 @@
-# Creates a file 
-file { '/home/ubuntu/.ssh/config':
-  ensure  => 'present',
-  content => 'Host 34.239.160.19
-    HostName 4888-web-01
-    User ubuntu
-    ForwardAgent yes 
-    IdentitiesOnly yes 
-    IdentityFile ~/.ssh/school
-',
-}
+# setup client SSH configuration
 
+exec { 'echo "PasswordAuthentication no\nIdentityFile ~/.ssh/school" >> /etc/ssh/ssh_config':
+        path    => '/bin/'
+}
