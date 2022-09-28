@@ -18,7 +18,7 @@ backend web_backend
 	server 4888-web-01 34.239.160.19:80 check
 	server 4888-web-02 34.231.243.196:80 check
 "
-echo "ENABLED=1" | sudo tee /etc/default/haproxy
+echo "ENABLED=1" | sudo tee -a /etc/default/haproxy
 echo "$config" | tee -a /etc/haproxy/haproxy.cfg
 if [ "$(pgrep -c haproxy)" -eq 0 ]; then
     sudo service haproxy start
