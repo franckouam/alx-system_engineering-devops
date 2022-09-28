@@ -1,0 +1,40 @@
+#!/usr/bin/env bash
+# This script configures web-02 to be identical to web-01
+
+if ! ( nginx -v &>/dev/null); then
+    sudo apt update -y -qq && \
+		sudo apt install -y nginx -qq
+fi
+
+if ( ufw version &>/dev/null ); then
+    sudo ufw allow 'Nginx HTTP'
+fi
+
+if ! [ -d "/var/www" ]; then
+    sudo mkdir -p /var/www/html
+fi
+
+sudo chown -R "$USER:$USER" /var/www
+sudo chmod -R 755 /var/www
+
+echo "Hello World!" > /var/www/html/index.html
+
+sudo cp /etc/nginx/sites-enabled/default nginx-default-site.backup
+
+config=\
+"server {
+		listen 80 default_server;
+		listen [::]:80 default_server;
+		root /var/www/html;
+		index index.html index.htm index.nginx-debian.html
+		server_name_;
+		add_header X-Served-By $(hostname);
+}"
+
+echo "$config" > /etc/nginx/sites-enabled/default
+
+if [ "$(pgrep -c nginx)" -eq 0 ]; then
+    sudo service nginx start
+else
+    sudo service nginx restart
+fi
