@@ -31,7 +31,7 @@ config=\
 		add_header X-Served-By $(hostname);
 }"
 
-echo "$config" > /etc/nginx/sites-enabled/default
+echo "$config" | sudo tee /etc/nginx/sites-enabled/default
 
 if [ "$(pgrep -c nginx)" -eq 0 ]; then
     sudo service nginx start
