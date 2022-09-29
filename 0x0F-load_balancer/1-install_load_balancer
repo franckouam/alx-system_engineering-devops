@@ -29,7 +29,7 @@ backend web_backend
 
 sudo cp /etc/haproxy/haproxy.cfg haproxy.cfg.backup
 
-echo "$config" | tee /etc/haproxy/haproxy.cfg
+echo "$config" | sudo tee /etc/haproxy/haproxy.cfg
 
 echo "ENABLED=1" | sudo tee /etc/default/haproxy
 
