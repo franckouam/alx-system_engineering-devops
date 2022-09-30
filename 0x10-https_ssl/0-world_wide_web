@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 # Display information about subdomains.
 
-subdomains=("lb-01" "web-01" "web-02")
+subdomains=("www" "lb-01" "web-01" "web-02")
 domain="$1"
 
 function dig_dn()
