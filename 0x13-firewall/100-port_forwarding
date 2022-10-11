@@ -18,11 +18,6 @@
 :ufw-not-local - [0:0]
 # End required lines
 
-# Allow port forwarding from port 8080/TCP to port 80/TCP
-*nat
-:PREROUTING ACCEPT [0:0]
--A PREROUTING -p tcp --dport 8080 -j REDIRECT --to-port 80
-COMMIT
 
 
 # allow all on loopback
@@ -80,4 +75,11 @@ COMMIT
 -A ufw-before-input -p udp -d 239.255.255.250 --dport 1900 -j ACCEPT
 
 # don't delete the 'COMMIT' line or these rules won't be processed
+COMMIT
+
+
+# Allow port forwarding from port 8080/TCP to port 80/TCP
+*nat
+:PREROUTING ACCEPT [0:0]
+-A PREROUTING -p tcp --dport 8080 -j REDIRECT --to-port 80
 COMMIT
