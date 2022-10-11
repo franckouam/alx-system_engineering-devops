@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+# Running whoami with a given parameter
+
+su  "$1" -s /bin/bash -c "whoami"
