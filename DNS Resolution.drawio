@@ -1,9 +1,15 @@
-<mxfile host="app.diagrams.net" modified="2022-10-15T23:32:39.977Z" agent="5.0 (X11; Ubuntu)" etag="dMW0fKInhc1fUC8bn4ai" version="20.2.3" type="github">
+<mxfile host="app.diagrams.net" modified="2022-10-15T23:37:49.463Z" agent="5.0 (X11; Ubuntu)" etag="R_EEA9KtKiAAQf2SQQYv" version="20.2.3" type="github">
   <diagram id="wd3Sw0RTQ_WEwJ2zXuom" name="Page-1">
     <mxGraphModel dx="1102" dy="567" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
+        <mxCell id="zGivxHXYcN0-czmQzqbh-19" value="" style="rounded=0;whiteSpace=wrap;html=1;dashed=1;fillColor=none;" parent="1" vertex="1">
+          <mxGeometry x="50" y="60" width="470" height="200" as="geometry" />
+        </mxCell>
+        <mxCell id="zGivxHXYcN0-czmQzqbh-22" value="" style="rounded=0;whiteSpace=wrap;html=1;dashed=1;fillColor=none;" parent="1" vertex="1">
+          <mxGeometry x="42" y="50" width="720" height="260" as="geometry" />
+        </mxCell>
         <mxCell id="zGivxHXYcN0-czmQzqbh-59" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;dashed=1;" parent="1" vertex="1">
           <mxGeometry x="330" y="330" width="430" height="290" as="geometry" />
         </mxCell>
@@ -36,7 +42,7 @@
             <mxPoint x="420" y="120" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="zGivxHXYcN0-czmQzqbh-14" value="dns request" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" parent="zGivxHXYcN0-czmQzqbh-12" vertex="1" connectable="0">
+        <mxCell id="zGivxHXYcN0-czmQzqbh-14" value="dns lookup" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" parent="zGivxHXYcN0-czmQzqbh-12" vertex="1" connectable="0">
           <mxGeometry x="-0.525" y="2" relative="1" as="geometry">
             <mxPoint as="offset" />
           </mxGeometry>
@@ -47,7 +53,7 @@
             <mxPoint x="610" y="120" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="zGivxHXYcN0-czmQzqbh-15" value="dns request" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" parent="zGivxHXYcN0-czmQzqbh-13" vertex="1" connectable="0">
+        <mxCell id="zGivxHXYcN0-czmQzqbh-15" value="dns lookup" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" parent="zGivxHXYcN0-czmQzqbh-13" vertex="1" connectable="0">
           <mxGeometry x="-0.25" y="-1" relative="1" as="geometry">
             <mxPoint as="offset" />
           </mxGeometry>
@@ -58,14 +64,8 @@
         <mxCell id="zGivxHXYcN0-czmQzqbh-18" value="System level address resolution" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" parent="1" vertex="1">
           <mxGeometry x="95" y="185" width="190" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="zGivxHXYcN0-czmQzqbh-19" value="" style="rounded=0;whiteSpace=wrap;html=1;dashed=1;fillColor=none;" parent="1" vertex="1">
-          <mxGeometry x="50" y="60" width="470" height="200" as="geometry" />
-        </mxCell>
         <mxCell id="zGivxHXYcN0-czmQzqbh-21" value="Local network level address resolution" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" parent="1" vertex="1">
           <mxGeometry x="170" y="230" width="230" height="30" as="geometry" />
-        </mxCell>
-        <mxCell id="zGivxHXYcN0-czmQzqbh-22" value="" style="rounded=0;whiteSpace=wrap;html=1;dashed=1;fillColor=none;" parent="1" vertex="1">
-          <mxGeometry x="42" y="50" width="720" height="260" as="geometry" />
         </mxCell>
         <mxCell id="zGivxHXYcN0-czmQzqbh-23" value="&lt;b&gt;Recursive DNS&lt;/b&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" parent="1" vertex="1">
           <mxGeometry x="345" y="280" width="110" height="30" as="geometry" />
@@ -199,7 +199,7 @@
             <mxPoint x="706" y="400" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="zGivxHXYcN0-czmQzqbh-58" value="dns request" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];rotation=85;" parent="zGivxHXYcN0-czmQzqbh-57" vertex="1" connectable="0">
+        <mxCell id="zGivxHXYcN0-czmQzqbh-58" value="dns lookup" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];rotation=85;" parent="zGivxHXYcN0-czmQzqbh-57" vertex="1" connectable="0">
           <mxGeometry x="-0.115" y="-1" relative="1" as="geometry">
             <mxPoint as="offset" />
           </mxGeometry>
