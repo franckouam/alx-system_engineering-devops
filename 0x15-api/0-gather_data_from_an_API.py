@@ -7,8 +7,6 @@ information about his/her TODO list progress.
 Example:
     $ python3 0-gather_data_from_an_API.py 6
 '''
-
-
 import requests as re
 import sys
 
