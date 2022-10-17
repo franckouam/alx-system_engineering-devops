@@ -1,7 +1,6 @@
 #!/usr/bin/python3
-"""
-script that, using this REST API, for a given employee ID, returns
-information about his/her TODO list progress.
+"""script that, using this REST API, for a given employee ID, returns
+   information about his/her TODO list progress.
 """
 
 import requests as re
@@ -41,7 +40,7 @@ if __name__ == '__main__':
     id_ = sys.argv[1]
     todos = get_todos(id_)
     completed = todos.get('completed')
-    print('Employee {} is done with tasks({}/{}'.format(
+    print('Employee {} is done with tasks({}/{})'.format(
                     todos.get('name'),
                     len(completed),
                     todos.get('total')
