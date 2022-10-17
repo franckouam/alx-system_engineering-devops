@@ -1,18 +1,26 @@
 #!/usr/bin/python3
-"""script that, using this REST API, for a given employee ID, returns
-   information about his/her TODO list progress.
+"""An example of API usage
+
+This script that, using this REST API, for a given employee ID, returns
+information about his/her TODO list progress.
+
+Example:
+    $ python3 0-gather_data_from_an_API.py 6
 """
+
 
 import requests as re
 import sys
+
+
+API_URL = 'https://jsonplaceholder.typicode.com'
 
 
 def get_todos(user_id):
     """Get completed TODO of a given user"""
     todos_info = {}
     try:
-        res = re.get('https://jsonplaceholder.typicode.com/' +
-                     f'users/{user_id}/todos')
+        res = re.get(f'{API_URL}/users/{user_id}/todos')
         todos = res.json()
         todos_info = {'total': len(todos), 'completed': []}
         todos_info['name'] = get_username(user_id)
@@ -28,8 +36,7 @@ def get_username(user_id):
     """Get the name of a given user"""
     name = ""
     try:
-        res = re.get('https://jsonplaceholder.typicode.com/' +
-                     f'users/{user_id}')
+        res = re.get(f'{API_URL}/users/{user_id}')
         name = res.json().get('name')
     except Exception as e:
         print(e)
