@@ -13,7 +13,7 @@ if __name__ == "__main__":
         name = req.json().get("name")
         if name is not None:
             jreq = requests.get(
-                "{}todos?userId={}".format(
+                "{}users/{}/todos".format(
                     url, user)).json()
             alltsk = len(jreq)
             completedtsk = []
