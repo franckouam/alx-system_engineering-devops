@@ -9,7 +9,7 @@ URL = 'https://www.reddit.com'
 def top_ten(subreddit):
     """Prints the top 10 hot post listed for a given subreddit"""
     try:
-        endpoint = '/r/{}/hot.json?count=10'.format(subreddit)
+        endpoint = '/r/{}/hot.json?limit=10'.format(subreddit)
         headers = {"User-Agent": "Custom Agen"}
         res = requests.get(URL+endpoint,
                            headers=headers,
