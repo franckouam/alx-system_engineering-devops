@@ -4,10 +4,10 @@ Module for requesting the Reddit API
 """
 import requests
 URL = 'https://www.reddit.com'
-headers = {"User-Agent": "Custom Agen"}
+headers = {"User-Agent": "Custom Agent"}
 
 
-def recursively(uri, after=None, hot_list=[]):
+def fetch_hot_posts(uri, after=None, hot_list=[]):
     """Recursive function for the job"""
     parameters = {}
     if after:
@@ -20,16 +20,16 @@ def recursively(uri, after=None, hot_list=[]):
         children = res.json().get('data').get('children')
         for child in children:
             hot_list.append(child.get('data').get('title'))
-        new_after = res.json().get('data').get('after')
-        if new_after is not None:
-            recursively(uri, new_after, hot_list)
+        next_ = res.json().get('data').get('after')
+        if next_ is not None:
+            fetch_hot_posts(uri, next_, hot_list)
         return hot_list
 
 
 def recurse(subreddit, hot_list=[]):
-    """Prints the top all hot posts listed for a given subreddit"""
+    """Fetchs the top hot posts listed for a given subreddit"""
     try:
         uri = URL + '/r/{}/hot.json'.format(subreddit)
-        return recursively(uri)
+        return fetch_hot_posts(uri)
     except Exception as e:
         print(e)
