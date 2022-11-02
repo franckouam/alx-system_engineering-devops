@@ -22,7 +22,7 @@ def count_words(subreddit, word_list):
         result = dict(sorted(result.items()))
         for key, value in result.items():
             if value:
-                print("{}: {}".format(key, value))
+                print("{}: {}".format(key.lower(), value))
         return result
     except Exception as e:
         print(e)
