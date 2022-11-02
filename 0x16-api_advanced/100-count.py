@@ -13,15 +13,16 @@ def count_words(subreddit, word_list):
         uri = URL + '/r/{}/hot.json'.format(subreddit)
         hot_titles = fetch_hot_posts(uri)
         pure_word_list = sanitize(word_list)
-        result = {}
+        result = dict(zip(pure_word_list, [0] * len(pure_word_list)))
         for title in hot_titles:
             for word in pure_word_list:
                 occurrences = count_occurrences(word, title.split())
                 if occurrences:
-                    result[word] = occurrences
+                    result[word] += occurrences
         result = dict(sorted(result.items()))
         for key, value in result.items():
-            print("{}: {}".format(key, value))
+            if value:
+                print("{}: {}".format(key, value))
         return result
     except Exception as e:
         print(e)
